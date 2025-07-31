@@ -4,17 +4,20 @@ export class CreateSwiftConfigDto {
   @IsString()
   name: string;
 
+  @IsOptional()
   @IsUrl()
-  authUrl: string;
+  authUrl?: string;
 
   @IsUrl()
   storageUrl: string;
 
+  @IsOptional()
   @IsString()
-  username: string;
+  username?: string;
 
+  @IsOptional()
   @IsString()
-  password: string;
+  password?: string;
 
   @IsString()
   tenantName: string;

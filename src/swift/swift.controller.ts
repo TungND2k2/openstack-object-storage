@@ -140,4 +140,38 @@ export class SwiftController {
       },
     };
   }
+
+  @Post('config/itu')
+  @HttpCode(HttpStatus.CREATED)
+  async createITUConfig() {
+    this.logger.log('Creating ITU OpenStack Swift configuration');
+
+    const createDto: CreateSwiftConfigDto = {
+      name: 'ITU OpenStack Swift',
+      authUrl: 'https://openstack-ext.itu.vn:5000/v3',
+      storageUrl: 'https://openstack-ext.itu.vn:8081/swift',
+      username: 'swift_user', // Placeholder - will be updated with actual credentials
+      password: 'swift_password', // Placeholder - will be updated with actual credentials
+      tenantName: '14ccc7bf08b74206b1ae3fe5591032cb',
+      tempUrlKey: 'temp_url_key', // Optional - for temporary URL generation
+      isActive: true,
+      description: 'ITU OpenStack Swift Object Storage Configuration',
+    };
+
+    const config = await this.swiftService.createConfig(createDto);
+
+    return {
+      message: 'ITU OpenStack Swift configuration created successfully',
+      data: {
+        id: (config as any)._id,
+        name: config.name,
+        authUrl: config.authUrl,
+        storageUrl: config.storageUrl,
+        tenantName: config.tenantName,
+        isActive: config.isActive,
+        description: config.description,
+        note: 'Please update username and password with actual credentials using PUT /api/v1/swift/config/{id}',
+      },
+    };
+  }
 }

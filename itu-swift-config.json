@@ -1,0 +1,10 @@
+{
+  "name": "ITU OpenStack Swift",
+  "storageUrl": "https://openstack-ext.itu.vn:8081/swift",
+  "tenantName": "14ccc7bf08b74206b1ae3fe5591032cb",
+  "tempUrlKey": "your_temp_url_key",
+  "isActive": true,
+  "description": "ITU OpenStack Swift Object Storage Configuration - Token từ JWT",
+  "createdAt": "2025-07-31T10:00:00.000Z",
+  "updatedAt": "2025-07-31T10:00:00.000Z"
+}

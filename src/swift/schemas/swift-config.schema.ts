@@ -8,17 +8,17 @@ export class SwiftConfig {
   @Prop({ required: true, unique: true })
   name: string;
 
-  @Prop({ required: true })
-  authUrl: string;
+  @Prop()
+  authUrl?: string;
 
   @Prop({ required: true })
   storageUrl: string;
 
-  @Prop({ required: true })
-  username: string;
+  @Prop()
+  username?: string;
 
-  @Prop({ required: true })
-  password: string;
+  @Prop()
+  password?: string;
 
   @Prop({ required: true })
   tenantName: string;
